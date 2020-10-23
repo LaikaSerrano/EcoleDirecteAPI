@@ -1,0 +1,22 @@
+{
+  "name": "ecoledirecteapi",
+  "version": "1.0.0",
+  "description": "Simplification of the extraction of information from the API service provided by \"Ecole Directe\" ( French Online Student Tracking Space )",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "url": "git://github.com/Asgarrrr/EcoleDirecteAPI.git"
+  },
+  "author": "Asgarrrr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Asgarrrr/EcoleDirecteAPI/issues"
+  },
+  "homepage": "https://github.com/Asgarrrr/EcoleDirecteAPI",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "node-fetch": "^2.6.1"
+  }
+}
