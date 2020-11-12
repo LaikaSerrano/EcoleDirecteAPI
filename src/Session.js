@@ -5,7 +5,7 @@ const axios = require("axios");
 
 // —————————————————————————————————————————————————————————————————————————————
 
-const Student = require("./Student");
+const Student = require("./Student"),
       Family  = require("./Family");
 
 class Session {
@@ -39,7 +39,6 @@ class Session {
 
         } catch (err) { throw new Error(err) }
     }
-
 
     async request(url, args = {}) {
         try {
