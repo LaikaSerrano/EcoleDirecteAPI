@@ -25,7 +25,6 @@ class Student {
         }
     }
 
-
     /**
      * Retrieves the student's Homeworks
      */
@@ -34,7 +33,44 @@ class Student {
             const response = await this.session.request(
                 `https://api.ecoledirecte.com/v3/Eleves/${this.id}/cahierdetexte.awp?verbe=get&`);
 
-            return response.data.data;
+            let homework = response.data.data
+
+            for (const date of Object.keys(response.data.data)) {
+
+                const response =
+                    await this.session.request(
+                        `https://api.ecoledirecte.com/v3/Eleves/10697/cahierdetexte/${date}.awp?verbe=get&`);
+
+                response.data.data.matieres.map( ( x ) => {
+
+                    if (x.aFaire && x.aFaire.contenu) {
+
+                        let buff   = new Buffer.from(x.aFaire.contenu, 'base64');
+                        let detail = buff
+                            .toString('ascii')
+                            .replace(/<\/?[^>]+(>|$)/g, "")
+                            .replace(/&eacute;/g, "é")
+                            .replace(/&egrave;/g, "è")
+                            .replace(/&ecirc;/g, "ê")
+                            .replace(/&agrave;/g, "à")
+                            .replace(/&nbsp;/g, " ")
+                            .replace(/&Iuml;/g, "Ï")
+                            .replace(/&deg;/g, "°")
+                            .replace(/&#39;/g, "'")
+                            .replace(/&ccedil;/g, "ç")
+                            .trim()
+
+                         let temp = homework[date].find(y => y.idDevoir = x.id)
+
+                         temp.content = detail
+                         temp.teacher = x.nomProf.substr(5);
+
+                    }
+                })
+            }
+
+            return homework;
+
         } catch (err) {
             throw new Error(err);;
         }
