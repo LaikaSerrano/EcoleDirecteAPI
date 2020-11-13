@@ -1,7 +1,7 @@
 # EcoleDirecteAPI
 
 ```bash
-npm install @asgarrrr/ecoledirecteapi
+npm install api-ecoledirecte
 ```
 Simplification of the extraction of information from \"Ecole Directe\" ( French Online Student Tracking Space )".
 

@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "url": "git://github.com/Asgarrrr/EcoleDirecteAPI.git"
   },
