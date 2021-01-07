@@ -4,7 +4,7 @@
 ```bash
 npm install @asgarrrr/ecoledirecteapi
 ```
-Simplification of the extraction of information from \"Ecole Directe\" ( French Online Student Tracking Space )".
+Simplification of the extraction of information from "Ecole Directe" ( French Online Student Tracking Space ).
 
 ## Features
 - Access to Student and Family Accounts
