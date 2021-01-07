@@ -1,4 +1,5 @@
 # EcoleDirecteAPI
+![npm](https://img.shields.io/npm/dt/@asgarrrr/ecoledirecteapi?color=red&label=NPM%20downloads)
 
 ```bash
 npm install @asgarrrr/ecoledirecteapi
